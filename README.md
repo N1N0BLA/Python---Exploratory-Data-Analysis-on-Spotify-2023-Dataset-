@@ -1,7 +1,7 @@
 
 # Python Exploratory Data Analysis on Spotify 2023 Dataset
-####JOSE MARTIN SJ. NINOBLA
-####2 ECE - D
+#### JOSE MARTIN SJ. NINOBLA
+#### 2 ECE - D
 
 This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for the course *Advanced Computer Programming and Algorithms (ECE 2112)* at the University of Santo Tomas, Faculty of Engineering. The experiment focuses on using Python's Pandas library for data analysis, Matplot and Seaborn for better analyzation and presentation of data.
 
