@@ -62,3 +62,5 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 ### 7. Advanced Analysis
 - Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
+
+___
