@@ -64,3 +64,29 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
 ___
+### PROBLEM 1: Overview of Dataset
+
+```python
+
+import pandas as pd
+
+# Load the CSV file into a DataFrame
+df = pd.read_csv('spotify-2023.csv',encoding='latin1')
+
+# Displays a summary of the DataFrame's structure, including the index range, column names, non-null counts, data types, and memory usage.
+df.info()
+
+# This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
+missing_values = df.isnull().sum()
+
+# This prints out missing_values.
+print(missing_values)
+```
+#### Explanation:
+- **`pd.read_csv()`**: Loads the dataset from a CSV file into a DataFrame named `df`.
+- **`df.info()`**: Displays a summary of the DataFrame's structure, including the index range, column names, non-null counts, data types, and memory usage.
+- **`missing_values = df.isnull().sum()`**: This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
+- **`print(missing_values)`**: This prints out missing_values.
+  ___
+
+  ### PROBLEM 2: Basic Descriptive Statistics
