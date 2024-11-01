@@ -87,6 +87,7 @@ print(missing_values)
 - **`df.info()`**: Displays a summary of the DataFrame's structure, including the index range, column names, non-null counts, data types, and memory usage.
 - **`missing_values = df.isnull().sum()`**: This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
 - **`print(missing_values)`**: This prints out missing_values.
+Note: encoding='latin1' is required to load the given dataset since the given file is not using a default UTF-8 encoding. The latin1 encoding can handle a wider range of byte values and is often used for files with Western European characters which is useful in loading this dataset.
   ___
 
   ### PROBLEM 2: Basic Descriptive Statistics
