@@ -162,7 +162,7 @@ Dropping Rows with Missing Values:
 Code: **`df = df.dropna()`**
 - Function: Removes any rows in the DataFrame df that contain missing (NaN) values.
 - Purpose: Cleans the dataset by dropping rows with incomplete data.
-- 
+  
 Checking Remaining Missing Values:
 Code: **`missing_values3 = df.isnull().sum()`**
 - Function: Calculates the number of missing values (NaN) for each column in the DataFrame df after the dropna() operation.
