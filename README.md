@@ -227,8 +227,8 @@ Code: **`print('median:', median)`**
 
 - Function: Prints the calculated median of the streams column.
 - Purpose: Displays the middle value of the streams column.
-Code: print('std:', std)
-
+  
+Code: **`print('std:', std)`**
 - Function: Prints the calculated standard deviation of the streams column.
 - Purpose: Displays the variability of the streams data.
 
@@ -249,9 +249,8 @@ plt.show()
 
 ##### Chart for released_year:
 Code: **`sns.histplot(df['released_year'], kde=True)`**
-
-Function: Creates a histogram of the released_year column with a Kernel Density Estimate (KDE) curve overlay.
-Purpose: To visualize the distribution of the release years of tracks in the dataset and to see trends or patterns.
+- Function: Creates a histogram of the released_year column with a Kernel Density Estimate (KDE) curve overlay.
+- Purpose: To visualize the distribution of the release years of tracks in the dataset and to see trends or patterns.
 
 Code: **`plt.title("Distribution of Released Year")`**
 - Function: Sets the title of the plot.
@@ -283,3 +282,419 @@ Code: **`plt.show()`**
 - Purpose: To render and show the plot of artist count distribution.
 ___
 ### PROBLEM 3: Basic Descriptive Statistics
+Sorting and Displaying Top 5 Most Streamed Tracks:
+```python
+
+# Sort the dataset by 'streams' in descending order and select the top 5 tracks
+top_streamed_tracks = df.sort_values(by='streams', ascending=False).head(5)
+
+# Display the top 5 most streamed tracks with relevant information
+print("Top 5 Most Streamed Tracks:")
+print(top_streamed_tracks[['track_name', 'artist(s)_name', 'streams']])
+
+```
+Code: **`top_streamed_tracks = df.sort_values(by='streams', ascending=False).head(5)`**
+- Function: Sorts the DataFrame df by the streams column in descending order and selects the top 5 tracks.
+- Purpose: To identify the 5 tracks with the highest number of streams.
+
+Code: **`print("Top 5 Most Streamed Tracks:")`**
+Function: Prints a header to label the output for top streamed tracks.
+Purpose: To give context to the printed list of top streamed tracks.
+
+Code: **`print(top_streamed_tracks[['track_name', 'artist(s)_name', 'streams']])`**
+- Function: Displays the track_name, artist(s)_name, and streams for the top 5 streamed tracks.
+- Purpose: To show the names and streaming counts of the top 5 most streamed tracks.
+
+Counting and Displaying Top 5 Most Frequent Artists:
+```python
+
+# Count the occurrences of each artist and select the top 5
+top_artists = df['artist(s)_name'].value_counts().head(5)
+
+# Display the top 5 most frequent artists
+print("Top 5 Most Frequent Artists by Number of Tracks:")
+print(top_artists)
+
+```
+Code: **`top_artists = df['artist(s)_name'].value_counts().head(5)`**
+- Function: Counts the occurrences of each artist in the artist(s)_name column and selects the top 5 artists with the most tracks.
+- Purpose: To find the artists who have the most tracks in the dataset.
+
+Code: **`print("Top 5 Most Frequent Artists by Number of Tracks:")`**
+- Function: Prints a header to label the output for top frequent artists.
+- Purpose: To introduce the list of top 5 artists by track count.
+
+Code: **`print(top_artists)`**
+- Function: Prints the list of top 5 most frequent artists and their respective track counts.
+- Purpose: To display the top 5 artists based on the number of tracks they have in the dataset.
+
+ ___
+### PROBLEM 4: Temporal Trends
+Plotting the Number of Tracks Released Per Year:
+```python
+
+# Group by 'released_year' and count the number of tracks per year
+tracks_per_year = df.groupby('released_year').size()
+
+# Plot the number of tracks released per year
+plt.figure(figsize=(10, 6))
+tracks_per_year.plot(kind='line', marker='o')
+plt.title("Number of Tracks Released Per Year")
+plt.xlabel("Year")
+plt.ylabel("Number of Tracks")
+plt.grid()
+plt.show()
+```
+Code: **`tracks_per_year = df.groupby('released_year').size()`**
+- Function: Groups the DataFrame df by released_year and counts the number of tracks for each year.
+- Purpose: To determine how many tracks were released each year.
+
+Code: **`tracks_per_year.plot(kind='line', marker='o')`**
+- Function: Creates a line plot showing the number of tracks released per year.
+- Purpose: To visualize the trend in the number of tracks released over time.
+
+Code: **`plt.title("Number of Tracks Released Per Year")`**
+- Function: Sets the title of the plot.
+- Purpose: To give context to the plot, indicating that it shows the number of tracks released per year.
+
+Code: **`plt.xlabel("Year")`**
+- Function: Sets the label for the x-axis.
+- Purpose: To clarify that the x-axis represents the year of release.
+
+Code: **`plt.ylabel("Number of Tracks")`**
+- Function: Sets the label for the y-axis.
+- Purpose: To clarify that the y-axis represents the number of tracks.
+
+Code: **`plt.grid()`**
+- Function: Adds a grid to the plot for better readability.
+- Purpose: To improve the visual clarity of the plot.
+
+Code: **`plt.show()`**
+- Function: Displays the plot.
+- Purpose: To render and show the plot of the number of tracks released per year.
+
+
+Plotting the Number of Tracks Released Per Month:
+```python
+
+import calendar
+
+# Map numbers 1-12 to month names
+df['released_month'] = df['released_month'].apply(lambda x: calendar.month_name[x])
+
+# Group by 'released_month' and count the number of tracks per month
+tracks_per_month = df['released_month'].value_counts().reindex(calendar.month_name[1:])
+
+# Plot the number of tracks released per month
+plt.figure(figsize=(10, 6))
+tracks_per_month.plot(kind='bar', color='skyblue')
+plt.title("Number of Tracks Released Per Month")
+plt.xlabel("Month")
+plt.ylabel("Number of Tracks")
+plt.xticks(rotation=45)
+plt.show()
+
+
+```
+Code: **`df['released_month'] = df['released_month'].apply(lambda x: calendar.month_name[x])`**
+- Function: Maps the month number (1-12) in the released_month column to the corresponding month name using the calendar library.
+- Purpose: To convert numeric month values into readable month names (e.g., 1 → January, 2 → February).
+
+Code: **`tracks_per_month = df['released_month'].value_counts().reindex(calendar.month_name[1:])`**
+- Function: Counts the occurrences of each month name in released_month and orders the result by month (from January to December).
+- Purpose: To determine how many tracks were released in each month of the year.
+
+Code: **`tracks_per_month.plot(kind='bar', color='skyblue')`**
+- Function: Creates a bar plot showing the number of tracks released per month.
+- Purpose: To visualize the distribution of track releases across different months of the year.
+
+Code: **`plt.title("Number of Tracks Released Per Month")`**
+- Function: Sets the title of the plot.
+- Purpose: To provide context for the chart, indicating it shows the number of tracks released each month.
+
+Code: **`plt.xlabel("Month")`**
+- Function: Sets the label for the x-axis.
+- Purpose: To clarify that the x-axis represents the months of the year.
+
+Code: **`plt.ylabel("Number of Tracks")`**
+- Function: Sets the label for the y-axis.
+- Purpose: To clarify that the y-axis represents the number of tracks released.
+
+Code: **`plt.xticks(rotation=45)`**
+- Function: Rotates the x-axis tick labels by 45 degrees for better readability.
+- Purpose: To prevent overlap of the month names on the x-axis.
+
+Code: **`plt.show()`**
+- Function: Displays the plot.
+- Purpose: To render and show the bar plot of the number of tracks released per month.
+
+Identifying the Month with the Most Releases:
+```python
+
+# Identify the month with the most releases
+most_releases_month = tracks_per_month.idxmax()
+print(f"The month with the most releases is: {most_releases_month}")
+
+```
+Code: **`most_releases_month = tracks_per_month.idxmax()`**
+- Function: Finds the month with the highest number of track releases.
+- Purpose: To determine which month had the most track releases.
+
+Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
+- Function: Prints the month with the most track releases.
+- Purpose: To display the month that had the highest number of releases.
+
+ ___
+### PROBLEM 5: Correlation Analysis and Visualizations
+Calculating and Visualizing Correlation Matrix
+```python
+
+
+```
+Code: **`attributes = [...]`**
+- Function: Defines a list of attributes/columns relevant for the correlation analysis.
+- Purpose: To specify the musical attributes (e.g., streams, BPM, energy, etc.) for which correlations will be computed.
+
+Code: **`correlation_matrix = df[attributes].corr()`**
+- Function: Calculates the correlation matrix for the specified columns in the attributes list.
+- Purpose: To examine how different musical attributes are related to each other, focusing on numeric correlations.
+
+Code: **`sns.heatmap(...)`**
+- Function: Creates a heatmap to visualize the correlation matrix, with values annotated, color-coded, and a legend for correlation coefficients.
+- Purpose: To provide a visual representation of the strength and direction of correlations between attributes, where positive and negative correlations are shown in different colors.
+
+Code: **`plt.title("Correlation Matrix of Streams and Other Musical Attributes")`**
+- Function: Sets the title of the heatmap.
+- Purpose: To describe the plot and give context to the correlation matrix visualization.
+
+Code: **`plt.show()
+- Function: Displays the heatmap.
+- Purpose: To render the plot and make it visible.
+
+Calculating Specific Correlations
+```python
+
+
+```
+Code: **`danceability_energy_corr = df['danceability_%'].corr(df['energy_%'])`**
+
+- Function: Calculates the correlation between danceability_% and energy_%.
+- Purpose: To check how danceability is related to energy in the dataset.
+
+Code: **`valence_acousticness_corr = df['valence_%'].corr(df['acousticness_%'])`**
+- Function: Calculates the correlation between valence_% and acousticness_%.
+- Purpose: To analyze the relationship between valence (mood) and acousticness (level of acoustic sound) of the tracks.
+
+Code: **`print(...)`**
+- Function: Prints the calculated correlation values for the specific musical attribute pairs.
+- Purpose: To display the correlation values in the console for interpretation.
+  
+ ___
+### PROBLEM 6: Playlist and Stream Correlation Analysis
+Summing Tracks Across Platforms
+```python
+# Sum the total track count across each playlist platform
+playlist_counts = {
+    'Spotify': df['in_spotify_playlists'].sum(),
+    'Deezer': df['in_deezer_playlists'].sum(),
+    'Apple': df['in_apple_playlists'].sum()
+}
+# Display the total track counts for each platform
+print("Total number of tracks in each platform's playlists:")
+for platform, count in playlist_counts.items():
+    print(f"{platform}: {count}")
+# Creates a bar chart for the total track count on each platform
+plt.figure(figsize=(8, 6))
+plt.bar(playlist_counts.keys(), playlist_counts.values(), color=['#1DB954', '#FF2D55', '#000000'])  # Color for each platform
+plt.title("Total Tracks in Playlists by Platform", fontsize=16)
+plt.xlabel("Platform", fontsize=14)
+plt.ylabel("Total Track Count", fontsize=14)
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Shows the plot
+plt.show()
+
+```
+Code: **`playlist_counts = { ... }`**
+- Function: Creates a dictionary to sum the total track count for each playlist platform (Spotify, Deezer, Apple).
+- Purpose: To calculate the total number of tracks in playlists for each platform.
+
+Code: **`print("Total number of tracks in each platform's playlists:")`**
+- Function: Prints the label for displaying the total track counts.
+- Purpose: To introduce the output showing the total track counts by platform.
+
+Code: **`for platform, count in playlist_counts.items(): print(f"{platform}: {count}")
+Function: Loops through the playlist_counts dictionary and prints the total track count for each platform.
+Purpose: To display the total number of tracks available on each playlist platform.
+Bar Chart of Total Tracks in Playlists
+
+Code: **`plt.bar(playlist_counts.keys(), playlist_counts.values(), ...)`**
+- Function: Creates a bar chart showing the total track counts for Spotify, Deezer, and Apple playlists.
+- Purpose: To visually compare the total track count across platforms.
+
+Code: **`plt.show()`**
+- Function: Displays the bar chart.
+- Purpose: To render the plot and make it visible.
+
+Correlation Between Streams and Playlist Counts
+```python
+# Calculate the correlation between streams and each playlist platform
+spotify_corr = df['streams'].corr(df['in_spotify_playlists'])
+deezer_corr = df['streams'].corr(df['in_deezer_playlists'])
+apple_corr = df['streams'].corr(df['in_apple_playlists'])
+
+
+correlations = {
+    'Spotify': spotify_corr,
+    'Deezer': deezer_corr,
+    'Apple': apple_corr
+}
+
+# Convert the correlations dictionary to a DataFrame for plotting
+correlations_df = pd.DataFrame(list(correlations.items()), columns=['Platform', 'Correlation'])
+
+# Plot the correlations as a bar chart
+plt.figure(figsize=(8, 6))
+sns.barplot(data=correlations_df, x='Platform', y='Correlation', hue='Platform', dodge=False, palette='deep', legend=False)
+plt.title('Correlation between Playlist Count and Streams by Platform')
+plt.ylim(-1, 1)  # Set y-axis limits to the correlation range
+plt.xlabel('Platform')
+plt.ylabel('Correlation with Streams')
+plt.show()
+
+# Display correlation results
+print("\nCorrelation of playlist counts with streams (higher values suggest more popular track preference):")
+print(f"Spotify: {spotify_corr}")
+print(f"Deezer: {deezer_corr}")
+print(f"Apple: {apple_corr}")
+
+```
+Code: **`spotify_corr = df['streams'].corr(df['in_spotify_playlists'])`**
+- Function: Calculates the correlation between streams and in_spotify_playlists.
+- Purpose: To determine how strongly streams correlate with track appearances in Spotify playlists.
+
+Code: **`correlations = { ... }`**
+- Function: Stores the correlation values between streams and playlist counts for each platform in a dictionary.
+- Purpose: To summarize correlations between tracks' popularity (streams) and their playlist appearances.
+
+Code: **`sns.barplot(data=correlations_df, ...)`**
+- Function: Creates a bar chart to visualize the correlation values between each platform’s playlist count and streams.
+- Purpose: To show the strength of the relationship between playlists and streams for each platform.
+
+Code: **`print(...)`**
+- Function: Displays the calculated correlations for each platform.
+- Purpose: To inform the user of the exact correlation values between streams and playlist appearances on Spotify, Deezer, and Apple.
+
+ ___
+### PROBLEM 7: Streams by Key and Mode, Artist Playlist and Chart Appearances
+Descriptive Statistics by Key and Mode
+```python
+# Group by 'key' and 'mode', then calculate mean, median, std, and percentiles
+grouped_stats = df.groupby(['key', 'mode'])['streams'].agg(
+    mean='mean',
+    median='median',
+    std='std',
+    q25=lambda x: x.quantile(0.25),
+    q75=lambda x: x.quantile(0.75)
+).reset_index()
+
+print(grouped_stats)
+
+# Visualization
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=df, x='key', y='streams', hue='mode', palette='Set2')
+plt.title('Distribution of Streams by Key and Mode')
+plt.xlabel('Key')
+plt.ylabel('Streams')
+plt.yscale('log')  # Log scale for better visibility
+plt.legend(title='Mode')
+plt.show()
+
+```
+Code: **`grouped_stats = df.groupby(['key', 'mode'])['streams'].agg(...)**`
+- Function: Groups the data by key and mode, then calculates mean, median, standard deviation, and quantiles (25th and 75th percentiles) for streams.
+- Purpose: To explore how streams vary across different musical keys and modes (e.g., major/minor scales).
+
+Code: **`sns.boxplot(data=df, x='key', y='streams', hue='mode', ...)**`
+- Function: Creates a box plot to visualize the distribution of streams by key and mode.
+- Purpose: To compare the spread and central tendency of streams across different keys and modes.
+
+Code: **`plt.show()**`
+- Function: Displays the box plot.
+- Purpose: To render and show the plot for the distribution of streams by key and mode.
+
+Artist Playlist Appearances
+```python
+# Assuming columns `artist` and playlist counts ('in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists') exist
+# Calculate the total number of playlist appearances for each artist
+df['total_playlist_appearances'] = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].sum(axis=1)
+artist_playlist_counts = df.groupby('artist(s)_name')['total_playlist_appearances'].sum().sort_values(ascending=False).reset_index()
+
+# Display top 10 artists with the most playlist appearances
+top_artists = artist_playlist_counts.head(10)
+print("Top 10 artists based on playlist appearances:")
+print(top_artists)
+
+# Plot the top 10 artists by playlist appearances
+plt.figure(figsize=(10, 6))
+sns.barplot(data=top_artists, x='total_playlist_appearances', y='artist(s)_name', palette='coolwarm', hue='artist(s)_name', legend=False)
+plt.title('Top 10 Artists by Playlist Appearances')
+plt.xlabel('Total Playlist Appearances')
+plt.ylabel('Artist')
+plt.show()
+
+```
+Code: **`df['total_playlist_appearances'] = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].sum(axis=1)**`
+- Function: Calculates the total playlist appearances for each track across the three platforms (Spotify, Deezer, Apple).
+- Purpose: To aggregate the number of playlists each track appears in across the specified platforms.
+
+Code: **`top_artists = artist_playlist_counts.head(10)**`
+- Function: Selects the top 10 artists based on the total playlist appearances.
+- Purpose: To display the top artists with the most playlist appearances.
+
+Code: **`sns.barplot(...)**`
+- Function: Creates a bar chart displaying the top 10 artists based on total playlist appearances.
+- Purpose: To visually represent which artists have the most tracks in playlists across platforms.
+
+Code: **`plt.show()**`
+- Function: Displays the bar chart.
+- Purpose: To render and show the bar chart for the top 10 artists by playlist appearances.
+
+Artist Chart Appearances
+```python
+# Assuming columns `artist` and charts counts ('in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts') exist
+# Calculate the total number of playlist appearances for each artist
+df['total_chart_appearances'] = df[['in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts']].sum(axis=1)
+artist_playlist_counts = df.groupby('artist(s)_name')['total_chart_appearances'].sum().sort_values(ascending=False).reset_index()
+
+# Display top 10 artists with the most playlist appearances
+top_artists = artist_playlist_counts.head(10)
+print("Top 10 artists based on chart appearances:")
+print(top_artists)
+
+# Plot the top 10 artists by playlist appearances
+plt.figure(figsize=(10, 6))
+sns.barplot(data=top_artists, x='total_chart_appearances', y='artist(s)_name', palette='coolwarm', hue='artist(s)_name', legend=False)
+plt.title('Top 10 Artists by Chart Appearances')
+plt.xlabel('Total Chart Appearances')
+plt.ylabel('Artist')
+plt.show()
+
+```
+Code: **`df['total_chart_appearances'] = df[['in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts']].sum(axis=1)**`
+- Function: Calculates the total chart appearances for each track across the four platforms (Spotify, Apple, Deezer, Shazam).
+- Purpose: To aggregate the number of chart appearances each track has across the specified platforms.
+
+Code: **`top_artists = artist_playlist_counts.head(10)**`
+- Function: Selects the top 10 artists based on the total chart appearances.
+- Purpose: To display the top artists with the most chart appearances.
+
+Code: **`sns.barplot(...)**`
+- Function: Creates a bar chart displaying the top 10 artists based on total chart appearances.
+- Purpose: To visually represent which artists have the most tracks on charts across platforms.
+
+Code: **`plt.show()**`
+- Function: Displays the bar chart.
+- Purpose: To render and show the bar chart for the top 10 artists by chart appearances.
+
