@@ -3,15 +3,15 @@
 ### JOSE MARTIN SJ. NINOBLA
 ### 2 ECE - D
 
-## Course
+## 🎓Course
 **ECE 2112: Advanced Computer Programming and Algorithms**
 
-## University
+##🏫 University
 **University of Santo Tomas**  
 **Faculty of Engineering**  
 **Electronics Engineering Department**  
 
-## Academic Year
+##📅 Academic Year
 **First Term, AY 2024 – 2025**
 
 This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for the course *Advanced Computer Programming and Algorithms (ECE 2112)* at the University of Santo Tomas, Faculty of Engineering. The experiment focuses on using Python's Pandas library for data analysis, Matplot and Seaborn for better analyzation and presentation of data.
@@ -19,7 +19,7 @@ This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for t
 ## 🚀Project Overview
 This project aims to analyze, visualize, and interpret a dataset of music tracks to extract meaningful insights about track popularity and musical trends. The analysis involves exploring track features, identifying trends in release patterns, examining relationships between musical characteristics and popularity, and generating recommendations based on findings.
 
-## Table of Contents
+##📚 Table of Contents
 
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
@@ -34,7 +34,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 11. [PROBLEM 7](#problem-7)
 
 
-## Objectives
+##📑 Objectives
 #### 1. Understand the Dataset Structure
 - Load and inspect the dataset, checking for missing values, data types, and the general structure.
   
@@ -60,7 +60,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Based on the analysis, provide insights and recommendations about music trends, characteristics of popular tracks, and artist patterns.
 
 
-## Guide Problems
+##🧾 Guide Problems
 
 ### 1. Overview of Dataset
 - How many rows and columns does the dataset contain?
