@@ -78,18 +78,100 @@ df = pd.read_csv('spotify-2023.csv',encoding='latin1')
 df.info()
 
 # This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
-missing_values = df.isnull().sum()
+missing_values1 = df.isnull().sum()
 
 # This prints out missing_values.
-print(missing_values)
+print(missing_values1)
 ```
 #### Explanation:
 - **`pd.read_csv()`**: Loads the dataset from a CSV file into a DataFrame named `df`.
 - **`df.info()`**: Displays a summary of the DataFrame's structure, including the index range, column names, non-null counts, data types, and memory usage.
-- **`missing_values = df.isnull().sum()`**: This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
-- **`print(missing_values)`**: This prints out missing_values.
+- **`missing_values1 = df.isnull().sum()`**: This calculates total number of missing (NaN) values for each column in the DataFrame and is placed in missing_values.
+- **`print(missing_values1)`**: This prints out missing_values.
 
  ###### Note: encoding='latin1' is required to load the given dataset since the given file is not using a default UTF-8 encoding. The latin1 encoding can handle a wider range of byte values and is often used for files with Western European characters which is useful in loading this dataset.
   ___
 
-  ### PROBLEM 2: Basic Descriptive Statistics
+  ### Solving Identified Problems: Data Cleaning
+  Note: These 2 pairs of code are used to check the results after removing the duplicates and the null values
+**`missing_values2 = df.isnull().sum()`**
+**`print(missing_values2)`**
+
+**`missing_values3 = df.isnull().sum()`**
+**`print(missing_values3)`**
+
+#### 1. Identifying and Displaying Duplicates
+```python
+# Identifies and removes duplicate rows based on artist and track names
+dup = df[df.duplicated(['artist(s)_name', 'track_name'])]  # Finds duplicates
+print("Duplicate tracks in this dataset are: ")
+print(dup)  # Displays duplicate rows found
+```
+Code: **`dup = df[df.duplicated(['artist(s)_name', 'track_name'])]`**
+
+Function: Finds rows with duplicate artist(s)_name and track_name and stores them in dup.
+Purpose: Identifies duplicates for review before removal.
+
+#### 2. Sorting and Removing Duplicates (Keeping the Best One):
+```
+df.sort_values(by=['artist(s)_name', 'track_name', 'streams', 'in_spotify_playlists'], ascending=[True, True, False, False], inplace=True)
+df = df.drop_duplicates(subset=['artist(s)_name', 'track_name'], keep='first')  # Drops duplicates
+```
+Code: **`df.sort_values(...)`**
+
+- Function: Sorts by artist(s)_name, track_name, streams, and in_spotify_playlists, prioritizing the highest values.
+- Purpose: Ensures the best (highest streams and playlists) track is kept.
+
+Code: **`df = df.drop_duplicates(subset=['artist(s)_name', 'track_name'], keep='first')`**
+
+- Function: Drops duplicates, keeping the first occurrence (highest value from sorting).
+- Purpose: Retains the most relevant track, removing redundant duplicates.
+Note: These were used these to check the results on missing values
+**`missing_values2 = df.isnull().sum()`** 
+**`print(missing_values2)`**
+
+
+#### 3. Data Type Conversion: Converts columns with commas to integers
+```
+df['in_deezer_playlists'] = df['in_deezer_playlists'].str.replace(',', '', regex=False).astype('int64')
+df['streams'] = pd.to_numeric(df['streams'], errors='coerce')  # Converts streams to numeric type
+df['in_shazam_charts'] = pd.to_numeric(df['in_shazam_charts'], errors='coerce')
+```
+
+Code: **`df['in_deezer_playlists'] = df['in_deezer_playlists'].str.replace(',', '', regex=False).astype('int64')`**
+Function: Removes commas and converts in_deezer_playlists to integers.
+Purpose: Cleans data to ensure numeric values for analysis.
+
+Code: **`df['streams'] = pd.to_numeric(df['streams'], errors='coerce')`**
+Function: Converts streams to numeric values, coercing errors into NaN.
+Purpose: Ensures streams is numeric for further analysis.
+
+Code: **`df['in_shazam_charts'] = pd.to_numeric(df['in_shazam_charts'], errors='coerce')`**
+Function: Converts in_shazam_charts to numeric values, handling errors as NaN.
+Purpose: Ensures in_shazam_charts is numeric for consistency.
+
+
+#### 4. Cleaning of Null Values
+```
+df = df.dropna()
+missing_values3 = df.isnull().sum()
+print(missing_values3)
+```
+Dropping Rows with Missing Values:
+Code: **`df = df.dropna()`**
+Function: Removes any rows in the DataFrame df that contain missing (NaN) values.
+Purpose: Cleans the dataset by dropping rows with incomplete data.
+Checking Remaining Missing Values:
+
+Code: **`missing_values3 = df.isnull().sum()`**
+Function: Calculates the number of missing values (NaN) for each column in the DataFrame df after the dropna() operation.
+Purpose: Checks if any missing values remain in the dataset after dropping rows.
+
+Code: **`print(missing_values3)`**
+Function: Prints the count of missing values for each column.
+Purpose: Displays the results to verify if any missing data is left.
+
+Note: These were used to check the results on missing values
+**`missing_values3 = df.isnull().sum()`** 
+**`print(missing_values3)`**
+___
