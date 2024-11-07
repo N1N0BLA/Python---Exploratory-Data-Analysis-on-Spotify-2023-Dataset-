@@ -147,8 +147,9 @@ Function: Converts streams to numeric values, coercing errors into NaN.
 Purpose: Ensures streams is numeric for further analysis.
 
 Code: **`df['in_shazam_charts'] = pd.to_numeric(df['in_shazam_charts'], errors='coerce')`**
-Function: Converts in_shazam_charts to numeric values, handling errors as NaN.
-Purpose: Ensures in_shazam_charts is numeric for consistency.
+
+- Function: Converts in_shazam_charts to numeric values, handling errors as NaN.
+- Purpose: Ensures in_shazam_charts is numeric for consistency.
 
 
 #### 4. Cleaning of Null Values
@@ -159,17 +160,17 @@ print(missing_values3)
 ```
 Dropping Rows with Missing Values:
 Code: **`df = df.dropna()`**
-Function: Removes any rows in the DataFrame df that contain missing (NaN) values.
-Purpose: Cleans the dataset by dropping rows with incomplete data.
+- Function: Removes any rows in the DataFrame df that contain missing (NaN) values.
+- Purpose: Cleans the dataset by dropping rows with incomplete data.
+- 
 Checking Remaining Missing Values:
-
 Code: **`missing_values3 = df.isnull().sum()`**
-Function: Calculates the number of missing values (NaN) for each column in the DataFrame df after the dropna() operation.
-Purpose: Checks if any missing values remain in the dataset after dropping rows.
+- Function: Calculates the number of missing values (NaN) for each column in the DataFrame df after the dropna() operation.
+- Purpose: Checks if any missing values remain in the dataset after dropping rows.
 
 Code: **`print(missing_values3)`**
-Function: Prints the count of missing values for each column.
-Purpose: Displays the results to verify if any missing data is left.
+- Function: Prints the count of missing values for each column.
+- Purpose: Displays the results to verify if any missing data is left.
 
 Note: These were used to check the results on missing values
 **`missing_values3 = df.isnull().sum()`** 
