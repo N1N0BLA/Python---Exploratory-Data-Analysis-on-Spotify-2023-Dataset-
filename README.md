@@ -448,7 +448,21 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 ### PROBLEM 5: Correlation Analysis and Visualizations
 Calculating and Visualizing Correlation Matrix
 ```python
+# relevant columns for correlation analysis
+attributes = ['streams', 'bpm', 'danceability_%', 'energy_%', 'valence_%', 'acousticness_%', 'instrumentalness_%', 'liveness_%', 'speechiness_%']
 
+# Calculates correlation matrix
+correlation_matrix = df[attributes].corr()
+# Creates a heatmap to visualize the correlation matrix
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, 
+            linewidths=0.5, fmt='.2f', cbar_kws={'label': 'Correlation Coefficient'})
+
+# title
+plt.title("Correlation Matrix of Streams and Other Musical Attributes")
+
+# Shows the plot
+plt.show()
 
 ```
 Code: **`attributes = [...]`**
@@ -473,7 +487,13 @@ Code: **`plt.show()
 
 Calculating Specific Correlations
 ```python
+# Calculate correlation between danceability_% and energy_%
+danceability_energy_corr = df['danceability_%'].corr(df['energy_%'])
+print(f"Correlation between danceability_% and energy_%: {danceability_energy_corr}")
 
+# Calculate correlation between valence_% and acousticness_%
+valence_acousticness_corr = df['valence_%'].corr(df['acousticness_%'])
+print(f"Correlation between valence_% and acousticness_%: {valence_acousticness_corr}")
 
 ```
 Code: **`danceability_energy_corr = df['danceability_%'].corr(df['energy_%'])`**
@@ -488,6 +508,26 @@ Code: **`valence_acousticness_corr = df['valence_%'].corr(df['acousticness_%'])`
 Code: **`print(...)`**
 - Function: Prints the calculated correlation values for the specific musical attribute pairs.
 - Purpose: To display the correlation values in the console for interpretation.
+
+Heatmap Visualization
+Code:**`plt.figure(figsize=(8, 6))`**
+- Function: Initializes the plot with a figure size of 8 by 6 inches.
+- Purpose: To set the dimensions of the plot for better clarity and presentation.
+
+Code: **`sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)`**
+- Function: Generates a heatmap from the correlation_matrix using the seaborn library.
+- **`annot=True`**: Annotates each cell with the correlation coefficient values.
+- **`cmap='coolwarm'`**: Specifies the color scheme (blue for negative correlations, red for positive correlations).
+- **`center=0`**: Centers the color palette around 0, ensuring that neutral correlations (0) are represented by a neutral color (e.g., white or gray).
+- Purpose: To visually represent the strength and direction of the correlation between various musical attributes (such as streams, energy, danceability, etc.) in the dataset. Positive correlations are shown in shades of red, while negative correlations are in blue, making it easy to identify relationships.
+
+Code:**` plt.title("Correlation Matrix for Streams and Musical Attributes")`**
+- Function: Adds a title to the heatmap plot.
+- Purpose: To label the plot and provide context, explaining that the plot represents the correlation matrix for streams and other musical attributes.
+
+Code: **`plt.show()`**
+- Function: Displays the heatmap plot.
+- Purpose: To render the plot and make it visible.
   
  ___
 ### PROBLEM 6: Playlist and Stream Correlation Analysis
