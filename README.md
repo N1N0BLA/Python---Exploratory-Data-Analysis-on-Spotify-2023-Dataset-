@@ -108,9 +108,8 @@ print("Duplicate tracks in this dataset are: ")
 print(dup)  # Displays duplicate rows found
 ```
 Code: **`dup = df[df.duplicated(['artist(s)_name', 'track_name'])]`**
-
-Function: Finds rows with duplicate artist(s)_name and track_name and stores them in dup.
-Purpose: Identifies duplicates for review before removal.
+- Function: Finds rows with duplicate artist(s)_name and track_name and stores them in dup.
+- Purpose: Identifies duplicates for review before removal.
 
 #### 2. Sorting and Removing Duplicates (Keeping the Best One):
 ```
