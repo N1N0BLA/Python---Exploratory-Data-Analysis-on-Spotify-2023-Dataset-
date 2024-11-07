@@ -1,8 +1,18 @@
 
 # 🌟Python Exploratory Data Analysis on Spotify 2023 Dataset 
-(Still In Progress)
-#### JOSE MARTIN SJ. NINOBLA
-#### 2 ECE - D
+### JOSE MARTIN SJ. NINOBLA
+### 2 ECE - D
+
+## Course
+**ECE 2112: Advanced Computer Programming and Algorithms**
+
+## University
+**University of Santo Tomas**  
+**Faculty of Engineering**  
+**Electronics Engineering Department**  
+
+## Academic Year
+**First Term, AY 2024 – 2025**
 
 This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for the course *Advanced Computer Programming and Algorithms (ECE 2112)* at the University of Santo Tomas, Faculty of Engineering. The experiment focuses on using Python's Pandas library for data analysis, Matplot and Seaborn for better analyzation and presentation of data.
 
@@ -13,18 +23,15 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
-3. [PROBLEM 1](#problem-1)
-4. [PROBLEM 2](#problem-2)
-5. [PROBLEM 3](#problem-3)
-6. [PROBLEM 4](#problem-4)
-7. [PROBLEM 5](#problem-5)
-8. [PROBLEM 6](#problem-6)
-9. [PROBLEM 7](#problem-7)
-10. [Installation](#installation)
-11. [Usage](#usage)
-12. [Contributing](#contributing)
-13. [License](#license)
-14. [Contact](#contact)
+3. [Installation](#How-to-Run)
+4. [Requirements](#Requirements)
+5. [PROBLEM 1](#problem-1)
+6. [PROBLEM 2](#problem-2)
+7. [PROBLEM 3](#problem-3)
+8. [PROBLEM 4](#problem-4)
+9. [PROBLEM 5](#problem-5)
+10. [PROBLEM 6](#problem-6)
+11. [PROBLEM 7](#problem-7)
 
 
 ## Objectives
@@ -774,3 +781,28 @@ Code: **`plt.show()**`
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by chart appearances.
 
+#### Explanation:
+- **PROBLEM A**: Uses `.iloc[]` to slice the DataFrame by selecting the first five rows and every second column (i.e., odd-numbered columns).
+- **PROBLEM B**: `.loc[]` is used to filter the DataFrame and find the row where the 'Model' is 'Mazda RX4'.
+- **PROBLEM C**: `.loc[]` filters the DataFrame to find the 'Camaro Z28' row and returns the value in the 'cyl' column, which corresponds to the number of cylinders.
+- **PROBLEM D**: The `.isin()` method checks whether the 'Model' column contains any of the car models in the provided list. It then extracts the number of cylinders and the gear type for those models.
+
+
+## How to Run
+
+1. Download and Install the Anaconda Distribution app in your Computer
+   ```
+   https://www.anaconda.com/download
+   ```
+
+2. Launch the Jupiter Notebook and create a new notebook
+   
+
+3. Copy Paste the codes and shift + enter to see the Output
+
+## Requirements
+
+- Python 3.x
+- Pandas library
+- Matplotlib library
+- Seaborn library
