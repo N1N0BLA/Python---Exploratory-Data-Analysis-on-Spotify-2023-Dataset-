@@ -1,12 +1,12 @@
 
-# Python Exploratory Data Analysis on Spotify 2023 Dataset 
+# 🌟Python Exploratory Data Analysis on Spotify 2023 Dataset 
 (Still In Progress)
 #### JOSE MARTIN SJ. NINOBLA
 #### 2 ECE - D
 
 This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for the course *Advanced Computer Programming and Algorithms (ECE 2112)* at the University of Santo Tomas, Faculty of Engineering. The experiment focuses on using Python's Pandas library for data analysis, Matplot and Seaborn for better analyzation and presentation of data.
 
-## Project Overview
+## 🚀Project Overview
 This project aims to analyze, visualize, and interpret a dataset of music tracks to extract meaningful insights about track popularity and musical trends. The analysis involves exploring track features, identifying trends in release patterns, examining relationships between musical characteristics and popularity, and generating recommendations based on findings.
 
 ## Objectives
