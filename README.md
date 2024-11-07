@@ -13,7 +13,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
-3. [Problems](#problem1)
+3. [Problem1](#problem-1)
 4. [Installation](#installation)
 5. [Usage](#usage)
 6. [Contributing](#contributing)
