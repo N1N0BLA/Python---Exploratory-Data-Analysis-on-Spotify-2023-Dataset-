@@ -14,11 +14,12 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
 3. [Problem1](#problem-1)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+4. [Problem2](#problem-2)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
 
 ## Objectives
@@ -77,7 +78,8 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
 ___
-### PROBLEM 1: Overview of Dataset
+### PROBLEM 1
+#### Overview of Dataset
 
 ```python
 
@@ -199,7 +201,8 @@ Code: **`df = df.sort_values(by='streams', ascending=False).reset_index(drop=Tru
 
 ___
 
-### PROBLEM 2: Basic Descriptive Statistics
+### PROBLEM 2
+#### Basic Descriptive Statistics
 ```python
 
 print('dtype: ',df['streams'].dtype) #Shows the data type
@@ -292,7 +295,8 @@ Code: **`plt.show()`**
 - Function: Displays the chart.
 - Purpose: To render and show the plot of artist count distribution.
 ___
-### PROBLEM 3: Basic Descriptive Statistics
+### PROBLEM 3
+#### Basic Descriptive Statistics
 Sorting and Displaying Top 5 Most Streamed Tracks:
 ```python
 
@@ -340,7 +344,8 @@ Code: **`print(top_artists)`**
 - Purpose: To display the top 5 artists based on the number of tracks they have in the dataset.
 
  ___
-### PROBLEM 4: Temporal Trends
+### PROBLEM 4
+#### Temporal Trends
 Plotting the Number of Tracks Released Per Year:
 ```python
 
