@@ -663,6 +663,18 @@ Code: **`plt.show()**`
 - Function: Displays the box plot.
 - Purpose: To render and show the plot for the distribution of streams by key and mode.
 
+### CHART USAGE: Why was a boxplot graph utilized?
+- Using mean, median, standard deviation, and percentiles will give a fuller picture of the distribution within each key and mode.
+- This approach lets you identify if certain keys or modes tend to have a higher median or average stream count, while also spotting high variability or skewness.
+  
+### CHART ANALYSIS:
+- The highest streaming numbers appear in C# and D keys, particularly in major mode
+- Several keys show notable high outliers, reaching up to 10^10 streams
+- Major mode generally shows higher median streams across most keys 
+- F and F# keys show the lowest median streaming numbers
+- Minor mode consistently shows lower streaming numbers compared to major
+- The lowest streams are around 104 to 105 range
+
 Artist Playlist Appearances
 ```python
 # Assuming columns `artist` and playlist counts ('in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists') exist
