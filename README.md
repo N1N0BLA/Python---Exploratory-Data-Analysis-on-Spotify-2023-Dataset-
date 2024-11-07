@@ -175,4 +175,111 @@ Code: **`print(missing_values3)`**
 Note: These were used to check the results on missing values
 **`missing_values3 = df.isnull().sum()`** 
 **`print(missing_values3)`**
+
+
+Sorting for better visualization on the next problem:
+```
+df = df.sort_values(by='streams', ascending = False).reset_index(drop=True)
+df
+```
+Code: **`df = df.sort_values(by='streams', ascending=False).reset_index(drop=True)`**
+- Function: Sorts the DataFrame df by the streams column in descending order and resets the index, dropping the old index.
+- Purpose: Organizes the dataset by streams, from highest to lowest, and resets the index for cleaner data.
+
 ___
+
+### PROBLEM 2: Basic Descriptive Statistics
+```python
+
+print('dtype: ',df['streams'].dtype) #Shows the data type
+# Calculates mean, median, and standard deviation of streams
+mean = df['streams'].mean()
+median = df['streams'].median()
+std = df['streams'].std()
+# Prints the mean median and std
+print('mean:', mean)
+print('median:', median)
+print('std:', std)
+```
+##### Printing the Data Type of streams Column:
+Code: **`print('dtype: ', df['streams'].dtype)`**
+- Function: Displays the data type of the streams column in the DataFrame df.
+- Purpose: To check the type of data stored in the streams column (e.g., integer, float).
+
+##### Calculating Statistics (Mean, Median, Standard Deviation):
+Code: **`mean = df['streams'].mean()`**
+- Function: Calculates the mean (average) of the streams column.
+- Purpose: To determine the average number of streams across all entries.
+
+Code: **`median = df['streams'].median()`**
+- Function: Calculates the median of the streams column.
+- Purpose: To find the middle value of streams when the data is sorted.
+
+Code: **`std = df['streams'].std()`**
+- Function: Calculates the standard deviation of the streams column.
+- Purpose: To measure the variability or spread of the streams data.
+
+##### Printing the Calculated Statistics:
+Code: **`print('mean:', mean)`**
+- Function: Prints the calculated mean of the streams column.
+- Purpose: Displays the average number of streams.
+Code: **`print('median:', median)`**
+
+- Function: Prints the calculated median of the streams column.
+- Purpose: Displays the middle value of the streams column.
+Code: print('std:', std)
+
+- Function: Prints the calculated standard deviation of the streams column.
+- Purpose: Displays the variability of the streams data.
+
+```python
+
+# Chart for the 'released_year'
+sns.histplot(df['released_year'], kde=True)
+plt.title("Distribution of Released Year")
+plt.xlabel("Released Year")
+plt.show()
+
+# Chart for the 'artist_count'
+sns.histplot(df['artist_count'], kde=True)
+plt.title("Distribution of Artist Count")
+plt.xlabel("Artist Count")
+plt.show()
+```
+
+##### Chart for released_year:
+Code: **`sns.histplot(df['released_year'], kde=True)`**
+
+Function: Creates a histogram of the released_year column with a Kernel Density Estimate (KDE) curve overlay.
+Purpose: To visualize the distribution of the release years of tracks in the dataset and to see trends or patterns.
+
+Code: **`plt.title("Distribution of Released Year")`**
+- Function: Sets the title of the plot.
+- Purpose: To give context to the chart by labeling it as the "Distribution of Released Year".
+
+Code: **`plt.xlabel("Released Year")`**
+- Function: Sets the label for the x-axis.
+- Purpose: To clarify that the x-axis represents the year the tracks were released.
+
+Code: **`plt.show()`**
+- Function: Displays the chart.
+- Purpose: To render the plot and make it visible.
+
+##### Chart for artist_count:
+Code: **`sns.histplot(df['artist_count'], kde=True)`**
+- Function: Creates a histogram of the artist_count column with a KDE curve overlay.
+- Purpose: To visualize the distribution of the number of artists per track and understand how tracks are distributed across artists.
+
+Code: **`plt.title("Distribution of Artist Count")`**
+- Function: Sets the title of the plot.
+- Purpose: To label the chart as the "Distribution of Artist Count".
+
+Code: **`plt.xlabel("Artist Count")`**
+- Function: Sets the label for the x-axis.
+- Purpose: To make it clear that the x-axis represents the number of artists associated with each track.
+
+Code: **`plt.show()`**
+- Function: Displays the chart.
+- Purpose: To render and show the plot of artist count distribution.
+___
+### PROBLEM 3: Basic Descriptive Statistics
