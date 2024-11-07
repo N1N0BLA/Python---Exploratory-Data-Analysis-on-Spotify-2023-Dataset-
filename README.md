@@ -94,11 +94,11 @@ print(missing_values1)
 
   ### Solving Identified Problems: Data Cleaning
   Note: These 2 pairs of code are used to check the results after removing the duplicates and the null values
-**`missing_values2 = df.isnull().sum()`**
-**`print(missing_values2)`**
+- **`missing_values2 = df.isnull().sum()`**
+- **`print(missing_values2)`**
 
-**`missing_values3 = df.isnull().sum()`**
-**`print(missing_values3)`**
+- **`missing_values3 = df.isnull().sum()`**
+- **`print(missing_values3)`**
 
 #### 1. Identifying and Displaying Duplicates
 ```python
