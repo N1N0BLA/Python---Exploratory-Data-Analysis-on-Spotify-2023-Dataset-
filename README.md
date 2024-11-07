@@ -222,8 +222,8 @@ Code: **`std = df['streams'].std()`**
 Code: **`print('mean:', mean)`**
 - Function: Prints the calculated mean of the streams column.
 - Purpose: Displays the average number of streams.
+  
 Code: **`print('median:', median)`**
-
 - Function: Prints the calculated median of the streams column.
 - Purpose: Displays the middle value of the streams column.
   
