@@ -13,13 +13,18 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
-3. [Problem1](#problem-1)
-4. [Problem2](#problem-2)
-5. [Installation](#installation)
-6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Contact](#contact)
+3. [PROBLEM 1](#problem-1)
+4. [PROBLEM 2](#problem-2)
+5. [PROBLEM 3](#problem-3)
+6. [PROBLEM 4](#problem-4)
+7. [PROBLEM 5](#problem-5)
+8. [PROBLEM 6](#problem-6)
+9. [PROBLEM 7](#problem-7)
+10. [Installation](#installation)
+11. [Usage](#usage)
+12. [Contributing](#contributing)
+13. [License](#license)
+14. [Contact](#contact)
 
 
 ## Objectives
@@ -78,8 +83,8 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
 ___
-### PROBLEM 1
-#### Overview of Dataset
+## PROBLEM 1
+### Overview of Dataset
 
 ```python
 
@@ -201,8 +206,8 @@ Code: **`df = df.sort_values(by='streams', ascending=False).reset_index(drop=Tru
 
 ___
 
-### PROBLEM 2
-#### Basic Descriptive Statistics
+## PROBLEM 2
+### Basic Descriptive Statistics
 ```python
 
 print('dtype: ',df['streams'].dtype) #Shows the data type
@@ -461,7 +466,8 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 - Purpose: To display the month that had the highest number of releases.
 
  ___
-### PROBLEM 5: Correlation Analysis and Visualizations
+## PROBLEM 5
+### Correlation Analysis and Visualizations
 Calculating and Visualizing Correlation Matrix
 ```python
 # relevant columns for correlation analysis
@@ -546,7 +552,8 @@ Code: **`plt.show()`**
 - Purpose: To render the plot and make it visible.
   
  ___
-### PROBLEM 6: Playlist and Stream Correlation Analysis
+## PROBLEM 6
+### Playlist and Stream Correlation Analysis
 Summing Tracks Across Platforms
 ```python
 # Sum the total track count across each playlist platform
@@ -643,7 +650,8 @@ Code: **`print(...)`**
 - Purpose: To inform the user of the exact correlation values between streams and playlist appearances on Spotify, Deezer, and Apple.
 
  ___
-### PROBLEM 7: Streams by Key and Mode, Artist Playlist and Chart Appearances
+## PROBLEM 7
+### Streams by Key and Mode, Artist Playlist and Chart Appearances
 Descriptive Statistics by Key and Mode
 ```python
 # Group by 'key' and 'mode', then calculate mean, median, std, and percentiles
