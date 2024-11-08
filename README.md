@@ -295,7 +295,7 @@ Code: **`plt.show()`**
 - **Trend**: There's a steep rise in releases starting around 2020, suggesting a possible increase in content production or data coverage for more recent years.
 - **Outliers**: The spike in releases in the last few years (around 2020-2022) stands out as an outlier in comparison to previous decades. This may indicate a trend of rapidly increasing content production in recent years, possibly due to the rise of digital platforms and streaming services.
   
-##### 📊 Chart for artist_count:
+### 📊 Chart for artist_count:
 Code: **`sns.histplot(df['artist_count'], kde=True)`**
 - Function: Creates a histogram of the artist_count column with a KDE curve overlay.
 - Purpose: To visualize the distribution of the number of artists per track and understand how tracks are distributed across artists.
@@ -312,7 +312,7 @@ Code: **`plt.show()`**
 - Function: Displays the chart.
 - Purpose: To render and show the plot of artist count distribution.
   
-#### 📊 CHART ANALYSIS:
+### 📊 CHART ANALYSIS:
 - **Main Pattern**: The "Artist Count" distribution is right-skewed, with the majority of releases featuring only a single artist. This is indicated by the peak at an artist count of 1.
 - **Trend**: There is a decreasing frequency as the artist count increases, showing that releases with more artists are less common.
 - **Outliers**: There are some releases with a high artist count (5 or more), but they are quite rare, and these points could be considered outliers. These outliers may represent collaborations or ensemble works.
@@ -370,7 +370,7 @@ Code: **`print(top_artists)`**
 
  ___
 ## 🚩 PROBLEM 4
-#### Temporal Trends
+### Temporal Trends
 **Plotting the Number of Tracks Released Per Year:**
 ```python
 
@@ -485,7 +485,7 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 - Function: Prints the month with the most track releases.
 - Purpose: To display the month that had the highest number of releases.
 
-#### 📊 CHART ANALYSIS:
+### 📊 CHART ANALYSIS:
 1. **Trends in the Number of Tracks Released Over Time**
 - Overall Pattern: The chart on the left, "Number of Tracks Released Per Year," shows that the number of track releases remained low and relatively stable from the early 1900s until the early 2000s.
 - Sharp Increase: Starting around 2010, there is a notable upward trend, with a dramatic spike after 2020. This sharp increase likely reflects either a rise in music production, a more comprehensive dataset for recent years, or a shift to digital platforms that has facilitated greater accessibility and recording frequency.
@@ -586,7 +586,7 @@ Code: **`plt.show()`**
 - Purpose: To render the plot and make it visible.
 
 
-#### 📊 CHART ANALYSIS:
+### 📊 CHART ANALYSIS:
 1. Correlation Between Streams and Musical Attributes
 - **Danceability%**: The correlation between streams and danceability_% is low, with a coefficient around -0.09 in the left matrix and -0.094 in the right matrix. This suggests a weak and slightly negative relationship, indicating that higher danceability does not necessarily lead to more streams.
 - **Energy%**: The energy_% attribute shows an even weaker correlation with streams, with a value of -0.04 in the left matrix and -0.036 in the right matrix. This near-zero value indicates virtually no relationship between a track’s energy level and its number of streams.
