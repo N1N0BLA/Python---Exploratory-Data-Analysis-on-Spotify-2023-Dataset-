@@ -19,7 +19,7 @@ This repository contains Exploratory Data Analysis on Spotify 2023 Dataset for t
 ## 🚀Project Overview
 This project aims to analyze, visualize, and interpret a dataset of music tracks to extract meaningful insights about track popularity and musical trends. The analysis involves exploring track features, identifying trends in release patterns, examining relationships between musical characteristics and popularity, and generating recommendations based on findings.
 
-##📚 Table of Contents
+## 📚 Table of Contents
 
 1. [Objectives](#objectives)
 2. [Guide Problems](#guide-problems)
