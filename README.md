@@ -537,7 +537,7 @@ Code: **`plt.title("Correlation Matrix of Streams and Other Musical Attributes")
 - Function: Sets the title of the heatmap.
 - Purpose: To describe the plot and give context to the correlation matrix visualization.
 
-Code: **`plt.show()
+Code: **`plt.show()`**
 - Function: Displays the heatmap.
 - Purpose: To render the plot and make it visible.
 
