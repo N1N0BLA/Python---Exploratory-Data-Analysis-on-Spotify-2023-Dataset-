@@ -21,17 +21,17 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 
 ## 📚 Table of Contents
 
-1. [Objectives](#objectives)
-2. [Guide Problems](#guide-problems)
+1. [Objectives](#-objectives)
+2. [Guide Problems](-#guide-problems)
 3. [Installation](#how-to-run)
 4. [Requirements](#requirements)
-5. [PROBLEM 1](#problem-1)
-6. [PROBLEM 2](#problem-2)
-7. [PROBLEM 3](#problem-3)
-8. [PROBLEM 4](#problem-4)
-9. [PROBLEM 5](#problem-5)
-10. [PROBLEM 6](#problem-6)
-11. [PROBLEM 7](#problem-7)
+5. [PROBLEM 1](#-problem-1)
+6. [PROBLEM 2](#-problem-2)
+7. [PROBLEM 3](#-problem-3)
+8. [PROBLEM 4](#-problem-4)
+9. [PROBLEM 5](#-problem-5)
+10. [PROBLEM 6](#-problem-6)
+11. [PROBLEM 7](#-problem-7)
 
 
 ## 📑 Objectives
