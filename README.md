@@ -90,7 +90,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
 ___
-## PROBLEM 1
+## 🚩 PROBLEM 1
 ### Overview of Dataset
 
 ```python
@@ -213,7 +213,7 @@ Code: **`df = df.sort_values(by='streams', ascending=False).reset_index(drop=Tru
 
 ___
 
-## PROBLEM 2
+## 🚩 PROBLEM 2
 ### Basic Descriptive Statistics
 ```python
 
@@ -320,7 +320,7 @@ Code: **`plt.show()`**
 
 
 ___
-### PROBLEM 3
+## 🚩 PROBLEM 3
 #### Basic Descriptive Statistics
 **Sorting and Displaying Top 5 Most Streamed Tracks:**
 ```python
@@ -369,7 +369,7 @@ Code: **`print(top_artists)`**
 - Purpose: To display the top 5 artists based on the number of tracks they have in the dataset.
 
  ___
-### PROBLEM 4
+## 🚩 PROBLEM 4
 #### Temporal Trends
 **Plotting the Number of Tracks Released Per Year:**
 ```python
@@ -500,7 +500,7 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 
 
  ___
-## PROBLEM 5
+## 🚩 PROBLEM 5
 ### Correlation Analysis and Visualizations
 **Calculating and Visualizing Correlation Matrix**
 ```python
@@ -602,7 +602,7 @@ Overall, none of these musical attributes (danceability, energy, bpm) have a str
 
   
  ___
-## PROBLEM 6
+## 🚩 PROBLEM 6
 ### Playlist and Stream Correlation Analysis
 Summing Tracks Across Platforms
 ```python
@@ -700,7 +700,7 @@ Code: **`print(...)`**
 - Purpose: To inform the user of the exact correlation values between streams and playlist appearances on Spotify, Deezer, and Apple.
 
  ___
-## PROBLEM 7
+## 🚩 PROBLEM 7
 ### Streams by Key and Mode, Artist Playlist and Chart Appearances
 Descriptive Statistics by Key and Mode
 ```python
