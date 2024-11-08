@@ -604,7 +604,7 @@ Overall, none of these musical attributes (danceability, energy, bpm) have a str
  ___
 ## 🚩 PROBLEM 6
 ### Playlist and Stream Correlation Analysis
-Summing Tracks Across Platforms
+**Summing Tracks Across Platforms**
 ```python
 # Sum the total track count across each playlist platform
 playlist_counts = {
@@ -637,11 +637,11 @@ Code: **`print("Total number of tracks in each platform's playlists:")`**
 - Function: Prints the label for displaying the total track counts.
 - Purpose: To introduce the output showing the total track counts by platform.
 
-Code: **`for platform, count in playlist_counts.items(): print(f"{platform}: {count}")
-Function: Loops through the playlist_counts dictionary and prints the total track count for each platform.
-Purpose: To display the total number of tracks available on each playlist platform.
-Bar Chart of Total Tracks in Playlists
-
+Code: **`for platform, count in playlist_counts.items(): print(f"{platform}: {count}")`**
+- Function: Loops through the playlist_counts dictionary and prints the total track count for each platform.
+- Purpose: To display the total number of tracks available on each playlist platform.
+  
+### 📊 Bar Chart of Total Tracks in Playlists
 Code: **`plt.bar(playlist_counts.keys(), playlist_counts.values(), ...)`**
 - Function: Creates a bar chart showing the total track counts for Spotify, Deezer, and Apple playlists.
 - Purpose: To visually compare the total track count across platforms.
@@ -650,7 +650,7 @@ Code: **`plt.show()`**
 - Function: Displays the bar chart.
 - Purpose: To render the plot and make it visible.
 
-Correlation Between Streams and Playlist Counts
+**Correlation Between Streams and Playlist Counts**
 ```python
 # Calculate the correlation between streams and each playlist platform
 spotify_corr = df['streams'].corr(df['in_spotify_playlists'])
@@ -702,7 +702,7 @@ Code: **`print(...)`**
  ___
 ## 🚩 PROBLEM 7
 ### Streams by Key and Mode, Artist Playlist and Chart Appearances
-Descriptive Statistics by Key and Mode
+**Descriptive Statistics by Key and Mode**
 ```python
 # Group by 'key' and 'mode', then calculate mean, median, std, and percentiles
 grouped_stats = df.groupby(['key', 'mode'])['streams'].agg(
@@ -742,7 +742,7 @@ Code: **`plt.show()`**
 - Using mean, median, standard deviation, and percentiles will give a fuller picture of the distribution within each key and mode.
 - This approach lets you identify if certain keys or modes tend to have a higher median or average stream count, while also spotting high variability or skewness.
   
-#### 📊 CHART ANALYSIS:
+### 📊 CHART ANALYSIS:
 - The highest streaming numbers appear in C# and D keys, particularly in major mode
 - Several keys show notable high outliers, reaching up to 10^10 streams
 - Major mode generally shows higher median streams across most keys 
@@ -824,7 +824,7 @@ Code: **`plt.show()`**
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by chart appearances.
 
-#### 📊 CHART ANALYSIS:
+### 📊 CHART ANALYSIS:
 
 ##### Analysis of Artists by Playlist Appearances
 
@@ -847,9 +847,9 @@ Code: **`plt.show()`**
 
 ##### Conclusion
 - Pop and hip-hop/rap artists consistently appear in both playlists and charts, showing their wide-reaching appeal. However, certain genres, such as electronic, seem more playlist-oriented, while newer artists or genre-specific stars (like Latin or R&B) are more prevalent in charts. This analysis highlights the evolving - - popularity dynamics between mainstream charts and curated playlists, driven by both legacy artists and rising stars.
-
+ ___
 **`df.info()`** - This is used in the last part to verify the new dataset after the cleaning and checking process.
-
+ ___
 ## How to Run
 
 1. Download and Install the Anaconda Distribution app in your Computer
