@@ -290,7 +290,12 @@ Code: **`plt.show()`**
 - Function: Displays the chart.
 - Purpose: To render the plot and make it visible.
 
-##### Chart for artist_count:
+### 📊 CHART ANALYSIS:
+- Main Pattern: The "Released Year" distribution shows a sharp increase in the number of releases over time, particularly after 2000. This indicates that most releases are recent, with a significant concentration of releases occurring from 2010 onward.
+- Trend: There's a steep rise in releases starting around 2020, suggesting a possible increase in content production or data coverage for more recent years.
+- Outliers: The spike in releases in the last few years (around 2020-2022) stands out as an outlier in comparison to previous decades. This may indicate a trend of rapidly increasing content production in recent years, possibly due to the rise of digital platforms and streaming services.
+  
+##### 📊 Chart for artist_count:
 Code: **`sns.histplot(df['artist_count'], kde=True)`**
 - Function: Creates a histogram of the artist_count column with a KDE curve overlay.
 - Purpose: To visualize the distribution of the number of artists per track and understand how tracks are distributed across artists.
@@ -306,6 +311,14 @@ Code: **`plt.xlabel("Artist Count")`**
 Code: **`plt.show()`**
 - Function: Displays the chart.
 - Purpose: To render and show the plot of artist count distribution.
+  
+#### 📊 CHART ANALYSIS:
+- Main Pattern: The "Artist Count" distribution is right-skewed, with the majority of releases featuring only a single artist. This is indicated by the peak at an artist count of 1.
+- Trend: There is a decreasing frequency as the artist count increases, showing that releases with more artists are less common.
+- Outliers: There are some releases with a high artist count (5 or more), but they are quite rare, and these points could be considered outliers. These outliers may represent collaborations or ensemble works.
+
+
+
 ___
 ### PROBLEM 3
 #### Basic Descriptive Statistics
@@ -472,6 +485,20 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 - Function: Prints the month with the most track releases.
 - Purpose: To display the month that had the highest number of releases.
 
+#### 📊 CHART ANALYSIS:
+1. Trends in the Number of Tracks Released Over Time
+- Overall Pattern: The chart on the left, "Number of Tracks Released Per Year," shows that the number of track releases remained low and relatively stable from the early 1900s until the early 2000s.
+- Sharp Increase: Starting around 2010, there is a notable upward trend, with a dramatic spike after 2020. This sharp increase likely reflects either a rise in music production, a more comprehensive dataset for recent years, or a shift to digital platforms that has facilitated greater accessibility and recording frequency.
+- Peak and Decline: The highest point appears to be around 2022, after which there is a slight drop. This peak could be due to data collection factors or reflect an actual decline in releases for the most recent year.
+
+2. Patterns in the Number of Tracks Released Per Month
+- Monthly Release Patterns: The "Number of Tracks Released Per Month" chart shows variation in releases across different months, with some months consistently seeing more releases than others.
+- Most Releases in May: May has the highest number of releases, standing out above all other months. January also has a high number of releases, but it's slightly lower than May.
+- Other Observations: There is no clear seasonality that would suggest that certain quarters of the year are significantly more active, though May appears to be a prominent month for releases. The summer months, particularly June, July, and August, show a slight dip in the number of releases.
+
+
+
+
  ___
 ## PROBLEM 5
 ### Correlation Analysis and Visualizations
@@ -557,6 +584,22 @@ Code:**` plt.title("Correlation Matrix for Streams and Musical Attributes")`**
 Code: **`plt.show()`**
 - Function: Displays the heatmap plot.
 - Purpose: To render the plot and make it visible.
+
+
+#### 📊 CHART ANALYSIS:
+1. Correlation Between Streams and Musical Attributes
+- Danceability%: The correlation between streams and danceability_% is low, with a coefficient around -0.09 in the left matrix and -0.094 in the right matrix. This suggests a weak and slightly negative relationship, indicating that higher danceability does not necessarily lead to more streams.
+- Energy%: The energy_% attribute shows an even weaker correlation with streams, with a value of -0.04 in the left matrix and -0.036 in the right matrix. This near-zero value indicates virtually no relationship between a track’s energy level and its number of streams.
+- BPM: The bpm attribute has a negligible correlation with streams, approximately -0.02 to -0.025 across both matrices. This minimal value shows that tempo, represented by bpm, has almost no effect on the streaming numbers.
+Overall, none of these musical attributes (danceability, energy, bpm) have a strong influence on the number of streams. The weak correlations suggest that other factors beyond these musical features likely play a more significant role in determining a track’s popularity.
+
+2. Correlation Between Danceability% and Energy%, and Valence% and Acousticness%
+- Danceability% and Energy%: The correlation between danceability_% and energy_% is moderate and positive, with values around 0.16 in both matrices. This indicates that tracks with higher danceability tend to also have slightly higher energy levels, though the relationship is not strong.
+- Valence% and Acousticness%: The correlation between valence_% and acousticness_% is moderate and negative, approximately -0.55 in both matrices. This negative correlation suggests that more acoustic tracks tend to have lower valence (less positive emotion) and vice versa.
+
+
+
+
   
  ___
 ## PROBLEM 6
@@ -699,7 +742,7 @@ Code: **`plt.show()**`
 - Using mean, median, standard deviation, and percentiles will give a fuller picture of the distribution within each key and mode.
 - This approach lets you identify if certain keys or modes tend to have a higher median or average stream count, while also spotting high variability or skewness.
   
-### CHART ANALYSIS:
+#### 📊 CHART ANALYSIS:
 - The highest streaming numbers appear in C# and D keys, particularly in major mode
 - Several keys show notable high outliers, reaching up to 10^10 streams
 - Major mode generally shows higher median streams across most keys 
@@ -781,13 +824,30 @@ Code: **`plt.show()**`
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by chart appearances.
 
-#### Explanation:
-- **PROBLEM A**: Uses `.iloc[]` to slice the DataFrame by selecting the first five rows and every second column (i.e., odd-numbered columns).
-- **PROBLEM B**: `.loc[]` is used to filter the DataFrame and find the row where the 'Model' is 'Mazda RX4'.
-- **PROBLEM C**: `.loc[]` filters the DataFrame to find the 'Camaro Z28' row and returns the value in the 'cyl' column, which corresponds to the number of cylinders.
-- **PROBLEM D**: The `.isin()` method checks whether the 'Model' column contains any of the car models in the provided list. It then extracts the number of cylinders and the gear type for those models.
+#### 📊 CHART ANALYSIS:
 
+##### Analysis of Artists by Playlist Appearances
 
+- Ed Sheeran and Taylor Swift are the most prominent artists in playlists, with high appearance counts, indicating their strong presence and popularity across various user-created or algorithmic playlists.
+- Other artists on this list, such as Eminem, Coldplay, and Dr. Dre (Snoop Dogg), suggest a mix of genres—ranging from pop, hip-hop, rap, rock, and electronic.
+- Artists like Avicii and Daft Punk represent electronic and dance genres, which often perform well in playlist settings, possibly due to their suitability for mood-based playlists.
+- Nirvana and Adele, representing rock and pop respectively, also show strong playlist appearances, indicating broad appeal across diverse listener groups.
+
+##### Analysis of Artists by Chart Appearances
+- Taylor Swift has the highest number of chart appearances by a significant margin, which suggests her consistent charting success and popularity across demographics.
+- Bad Bunny and SZA are other top-charting artists, indicating the popularity of Latin music and R&B in mainstream charts.
+- Newer artists like Olivia Rodrigo and NewJeans are also prominent, reflecting the influence of recent trends and younger audiences.
+- A more varied genre representation is evident here with artists like Dave, Central Cee (UK rap), and Latto (hip-hop), suggesting that hip-hop and rap are well-represented in charts.
+  
+##### Comparing Playlist and Chart Appearances
+- Taylor Swift and Ed Sheeran appear in both the playlist and chart lists, showing that they have a consistent presence across both metrics.
+- Genres: Pop, hip-hop, and rap artists appear frequently in both playlists and charts, indicating that these genres have broad appeal and adaptability.
+- Diverse Popularity: Some artists like Bad Bunny and SZA perform better in charts but aren't as prominent in playlists, possibly reflecting their recent surge in mainstream popularity rather than organic playlist curation.
+- Electronic/Dance Music: Artists like Avicii and Daft Punk appear mainly in playlists, which may suggest that while they are popular in curated listening experiences, they might not have as consistent chart performance.
+
+##### Conclusion
+- Pop and hip-hop/rap artists consistently appear in both playlists and charts, showing their wide-reaching appeal. However, certain genres, such as electronic, seem more playlist-oriented, while newer artists or genre-specific stars (like Latin or R&B) are more prevalent in charts. This analysis highlights the evolving - - popularity dynamics between mainstream charts and curated playlists, driven by both legacy artists and rising stars.
+  
 ## How to Run
 
 1. Download and Install the Anaconda Distribution app in your Computer
