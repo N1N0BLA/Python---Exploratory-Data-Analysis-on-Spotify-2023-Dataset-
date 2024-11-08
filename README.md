@@ -119,7 +119,7 @@ print(missing_values1)
   ___
 
   ### Solving Identified Problems: Data Cleaning
-  Note: These 2 pairs of code are used to check the results after removing the duplicates and the null values
+  ###### Note: These 2 pairs of code are used to check the results after removing the duplicates and the null values
 - **`missing_values2 = df.isnull().sum()`**
 - **`print(missing_values2)`**
 
@@ -291,9 +291,9 @@ Code: **`plt.show()`**
 - Purpose: To render the plot and make it visible.
 
 ### 📊 CHART ANALYSIS:
-- Main Pattern: The "Released Year" distribution shows a sharp increase in the number of releases over time, particularly after 2000. This indicates that most releases are recent, with a significant concentration of releases occurring from 2010 onward.
-- Trend: There's a steep rise in releases starting around 2020, suggesting a possible increase in content production or data coverage for more recent years.
-- Outliers: The spike in releases in the last few years (around 2020-2022) stands out as an outlier in comparison to previous decades. This may indicate a trend of rapidly increasing content production in recent years, possibly due to the rise of digital platforms and streaming services.
+- **Main Pattern**: The "Released Year" distribution shows a sharp increase in the number of releases over time, particularly after 2000. This indicates that most releases are recent, with a significant concentration of releases occurring from 2010 onward.
+- **Trend**: There's a steep rise in releases starting around 2020, suggesting a possible increase in content production or data coverage for more recent years.
+- **Outliers**: The spike in releases in the last few years (around 2020-2022) stands out as an outlier in comparison to previous decades. This may indicate a trend of rapidly increasing content production in recent years, possibly due to the rise of digital platforms and streaming services.
   
 ##### 📊 Chart for artist_count:
 Code: **`sns.histplot(df['artist_count'], kde=True)`**
@@ -313,16 +313,16 @@ Code: **`plt.show()`**
 - Purpose: To render and show the plot of artist count distribution.
   
 #### 📊 CHART ANALYSIS:
-- Main Pattern: The "Artist Count" distribution is right-skewed, with the majority of releases featuring only a single artist. This is indicated by the peak at an artist count of 1.
-- Trend: There is a decreasing frequency as the artist count increases, showing that releases with more artists are less common.
-- Outliers: There are some releases with a high artist count (5 or more), but they are quite rare, and these points could be considered outliers. These outliers may represent collaborations or ensemble works.
+- **Main Pattern**: The "Artist Count" distribution is right-skewed, with the majority of releases featuring only a single artist. This is indicated by the peak at an artist count of 1.
+- **Trend**: There is a decreasing frequency as the artist count increases, showing that releases with more artists are less common.
+- **Outliers**: There are some releases with a high artist count (5 or more), but they are quite rare, and these points could be considered outliers. These outliers may represent collaborations or ensemble works.
 
 
 
 ___
 ### PROBLEM 3
 #### Basic Descriptive Statistics
-Sorting and Displaying Top 5 Most Streamed Tracks:
+**Sorting and Displaying Top 5 Most Streamed Tracks:**
 ```python
 
 # Sort the dataset by 'streams' in descending order and select the top 5 tracks
@@ -345,7 +345,7 @@ Code: **`print(top_streamed_tracks[['track_name', 'artist(s)_name', 'streams']])
 - Function: Displays the track_name, artist(s)_name, and streams for the top 5 streamed tracks.
 - Purpose: To show the names and streaming counts of the top 5 most streamed tracks.
 
-Counting and Displaying Top 5 Most Frequent Artists:
+**Counting and Displaying Top 5 Most Frequent Artists:**
 ```python
 
 # Count the occurrences of each artist and select the top 5
@@ -371,7 +371,7 @@ Code: **`print(top_artists)`**
  ___
 ### PROBLEM 4
 #### Temporal Trends
-Plotting the Number of Tracks Released Per Year:
+**Plotting the Number of Tracks Released Per Year:**
 ```python
 
 # Group by 'released_year' and count the number of tracks per year
@@ -415,7 +415,7 @@ Code: **`plt.show()`**
 - Purpose: To render and show the plot of the number of tracks released per year.
 
 
-Plotting the Number of Tracks Released Per Month:
+**Plotting the Number of Tracks Released Per Month:**
 ```python
 
 import calendar
@@ -486,12 +486,12 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
 - Purpose: To display the month that had the highest number of releases.
 
 #### 📊 CHART ANALYSIS:
-1. Trends in the Number of Tracks Released Over Time
+1. **Trends in the Number of Tracks Released Over Time**
 - Overall Pattern: The chart on the left, "Number of Tracks Released Per Year," shows that the number of track releases remained low and relatively stable from the early 1900s until the early 2000s.
 - Sharp Increase: Starting around 2010, there is a notable upward trend, with a dramatic spike after 2020. This sharp increase likely reflects either a rise in music production, a more comprehensive dataset for recent years, or a shift to digital platforms that has facilitated greater accessibility and recording frequency.
 - Peak and Decline: The highest point appears to be around 2022, after which there is a slight drop. This peak could be due to data collection factors or reflect an actual decline in releases for the most recent year.
 
-2. Patterns in the Number of Tracks Released Per Month
+2. **Patterns in the Number of Tracks Released Per Month**
 - Monthly Release Patterns: The "Number of Tracks Released Per Month" chart shows variation in releases across different months, with some months consistently seeing more releases than others.
 - Most Releases in May: May has the highest number of releases, standing out above all other months. January also has a high number of releases, but it's slightly lower than May.
 - Other Observations: There is no clear seasonality that would suggest that certain quarters of the year are significantly more active, though May appears to be a prominent month for releases. The summer months, particularly June, July, and August, show a slight dip in the number of releases.
@@ -502,7 +502,7 @@ Code: **`print(f"The month with the most releases is: {most_releases_month}")`**
  ___
 ## PROBLEM 5
 ### Correlation Analysis and Visualizations
-Calculating and Visualizing Correlation Matrix
+**Calculating and Visualizing Correlation Matrix**
 ```python
 # relevant columns for correlation analysis
 attributes = ['streams', 'bpm', 'danceability_%', 'energy_%', 'valence_%', 'acousticness_%', 'instrumentalness_%', 'liveness_%', 'speechiness_%']
@@ -541,7 +541,7 @@ Code: **`plt.show()
 - Function: Displays the heatmap.
 - Purpose: To render the plot and make it visible.
 
-Calculating Specific Correlations
+**Calculating Specific Correlations**
 ```python
 # Calculate correlation between danceability_% and energy_%
 danceability_energy_corr = df['danceability_%'].corr(df['energy_%'])
@@ -565,7 +565,7 @@ Code: **`print(...)`**
 - Function: Prints the calculated correlation values for the specific musical attribute pairs.
 - Purpose: To display the correlation values in the console for interpretation.
 
-Heatmap Visualization
+**Heatmap Visualization**
 Code:**`plt.figure(figsize=(8, 6))`**
 - Function: Initializes the plot with a figure size of 8 by 6 inches.
 - Purpose: To set the dimensions of the plot for better clarity and presentation.
@@ -588,9 +588,9 @@ Code: **`plt.show()`**
 
 #### 📊 CHART ANALYSIS:
 1. Correlation Between Streams and Musical Attributes
-- Danceability%: The correlation between streams and danceability_% is low, with a coefficient around -0.09 in the left matrix and -0.094 in the right matrix. This suggests a weak and slightly negative relationship, indicating that higher danceability does not necessarily lead to more streams.
-- Energy%: The energy_% attribute shows an even weaker correlation with streams, with a value of -0.04 in the left matrix and -0.036 in the right matrix. This near-zero value indicates virtually no relationship between a track’s energy level and its number of streams.
-- BPM: The bpm attribute has a negligible correlation with streams, approximately -0.02 to -0.025 across both matrices. This minimal value shows that tempo, represented by bpm, has almost no effect on the streaming numbers.
+- **Danceability%**: The correlation between streams and danceability_% is low, with a coefficient around -0.09 in the left matrix and -0.094 in the right matrix. This suggests a weak and slightly negative relationship, indicating that higher danceability does not necessarily lead to more streams.
+- **Energy%**: The energy_% attribute shows an even weaker correlation with streams, with a value of -0.04 in the left matrix and -0.036 in the right matrix. This near-zero value indicates virtually no relationship between a track’s energy level and its number of streams.
+- **BPM**: The bpm attribute has a negligible correlation with streams, approximately -0.02 to -0.025 across both matrices. This minimal value shows that tempo, represented by bpm, has almost no effect on the streaming numbers.
 Overall, none of these musical attributes (danceability, energy, bpm) have a strong influence on the number of streams. The weak correlations suggest that other factors beyond these musical features likely play a more significant role in determining a track’s popularity.
 
 2. Correlation Between Danceability% and Energy%, and Valence% and Acousticness%
@@ -750,7 +750,7 @@ Code: **`plt.show()**`
 - Minor mode consistently shows lower streaming numbers compared to major
 - The lowest streams are around 104 to 105 range
 
-Artist Playlist Appearances
+**Artist Playlist Appearances**
 ```python
 # Assuming columns `artist` and playlist counts ('in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists') exist
 # Calculate the total number of playlist appearances for each artist
@@ -787,7 +787,7 @@ Code: **`plt.show()**`
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by playlist appearances.
 
-Artist Chart Appearances
+**Artist Chart Appearances**
 ```python
 # Assuming columns `artist` and charts counts ('in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts') exist
 # Calculate the total number of playlist appearances for each artist
