@@ -25,7 +25,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 2. [Guide Problems](-#guide-problems)
 3. [Installation](#how-to-run)
 4. [Requirements](#requirements)
-5. [PROBLEM 1](#p-roblem-1)
+5. [PROBLEM 1](#-problem-1)
 6. [PROBLEM 2](#-problem-2)
 7. [PROBLEM 3](#-problem-3)
 8. [PROBLEM 4](#-problem-4)
