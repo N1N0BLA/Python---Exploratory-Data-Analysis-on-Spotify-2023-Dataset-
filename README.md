@@ -726,15 +726,15 @@ plt.legend(title='Mode')
 plt.show()
 
 ```
-Code: **`grouped_stats = df.groupby(['key', 'mode'])['streams'].agg(...)**`
+Code: **`grouped_stats = df.groupby(['key', 'mode'])['streams'].agg(...)`**
 - Function: Groups the data by key and mode, then calculates mean, median, standard deviation, and quantiles (25th and 75th percentiles) for streams.
 - Purpose: To explore how streams vary across different musical keys and modes (e.g., major/minor scales).
 
-Code: **`sns.boxplot(data=df, x='key', y='streams', hue='mode', ...)**`
+Code: **`sns.boxplot(data=df, x='key', y='streams', hue='mode', ...)`**
 - Function: Creates a box plot to visualize the distribution of streams by key and mode.
 - Purpose: To compare the spread and central tendency of streams across different keys and modes.
 
-Code: **`plt.show()**`
+Code: **`plt.show()`**
 - Function: Displays the box plot.
 - Purpose: To render and show the plot for the distribution of streams by key and mode.
 
@@ -771,19 +771,19 @@ plt.ylabel('Artist')
 plt.show()
 
 ```
-Code: **`df['total_playlist_appearances'] = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].sum(axis=1)**`
+Code: **`df['total_playlist_appearances'] = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].sum(axis=1)`**
 - Function: Calculates the total playlist appearances for each track across the three platforms (Spotify, Deezer, Apple).
 - Purpose: To aggregate the number of playlists each track appears in across the specified platforms.
 
-Code: **`top_artists = artist_playlist_counts.head(10)**`
+Code: **`top_artists = artist_playlist_counts.head(10)`**
 - Function: Selects the top 10 artists based on the total playlist appearances.
 - Purpose: To display the top artists with the most playlist appearances.
 
-Code: **`sns.barplot(...)**`
+Code: **`sns.barplot(...)`**
 - Function: Creates a bar chart displaying the top 10 artists based on total playlist appearances.
 - Purpose: To visually represent which artists have the most tracks in playlists across platforms.
 
-Code: **`plt.show()**`
+Code: **`plt.show()`**
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by playlist appearances.
 
@@ -808,19 +808,19 @@ plt.ylabel('Artist')
 plt.show()
 
 ```
-Code: **`df['total_chart_appearances'] = df[['in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts']].sum(axis=1)**`
+Code: **`df['total_chart_appearances'] = df[['in_spotify_charts', 'in_apple_charts', 'in_deezer_charts', 'in_shazam_charts']].sum(axis=1)`**
 - Function: Calculates the total chart appearances for each track across the four platforms (Spotify, Apple, Deezer, Shazam).
 - Purpose: To aggregate the number of chart appearances each track has across the specified platforms.
 
-Code: **`top_artists = artist_playlist_counts.head(10)**`
+Code: **`top_artists = artist_playlist_counts.head(10)`**
 - Function: Selects the top 10 artists based on the total chart appearances.
 - Purpose: To display the top artists with the most chart appearances.
 
-Code: **`sns.barplot(...)**`
+Code: **`sns.barplot(...)`**
 - Function: Creates a bar chart displaying the top 10 artists based on total chart appearances.
 - Purpose: To visually represent which artists have the most tracks on charts across platforms.
 
-Code: **`plt.show()**`
+Code: **`plt.show()`**
 - Function: Displays the bar chart.
 - Purpose: To render and show the bar chart for the top 10 artists by chart appearances.
 
@@ -847,7 +847,9 @@ Code: **`plt.show()**`
 
 ##### Conclusion
 - Pop and hip-hop/rap artists consistently appear in both playlists and charts, showing their wide-reaching appeal. However, certain genres, such as electronic, seem more playlist-oriented, while newer artists or genre-specific stars (like Latin or R&B) are more prevalent in charts. This analysis highlights the evolving - - popularity dynamics between mainstream charts and curated playlists, driven by both legacy artists and rising stars.
-  
+
+**`df.info()`** - This is used in the last part to verify the new dataset after the cleaning and checking process.
+
 ## How to Run
 
 1. Download and Install the Anaconda Distribution app in your Computer
