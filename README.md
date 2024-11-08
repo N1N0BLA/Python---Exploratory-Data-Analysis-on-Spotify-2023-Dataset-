@@ -164,12 +164,12 @@ df['in_shazam_charts'] = pd.to_numeric(df['in_shazam_charts'], errors='coerce')
 ```
 
 Code: **`df['in_deezer_playlists'] = df['in_deezer_playlists'].str.replace(',', '', regex=False).astype('int64')`**
-Function: Removes commas and converts in_deezer_playlists to integers.
-Purpose: Cleans data to ensure numeric values for analysis.
+- Function: Removes commas and converts in_deezer_playlists to integers.
+- Purpose: Cleans data to ensure numeric values for analysis.
 
 Code: **`df['streams'] = pd.to_numeric(df['streams'], errors='coerce')`**
-Function: Converts streams to numeric values, coercing errors into NaN.
-Purpose: Ensures streams is numeric for further analysis.
+- Function: Converts streams to numeric values, coercing errors into NaN.
+- Purpose: Ensures streams is numeric for further analysis.
 
 Code: **`df['in_shazam_charts'] = pd.to_numeric(df['in_shazam_charts'], errors='coerce')`**
 
