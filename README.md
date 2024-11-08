@@ -60,7 +60,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 - Based on the analysis, provide insights and recommendations about music trends, characteristics of popular tracks, and artist patterns.
 
 
-##🧾 Guide Problems
+## 🧾 Guide Problems
 
 ### 1. Overview of Dataset
 - How many rows and columns does the dataset contain?
