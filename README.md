@@ -21,7 +21,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 
 ## 📚 Table of Contents
 
-1. [Objectives](#📑objectives)
+1. [Objectives](#📑-Objectives)
 2. [Guide Problems](#🧾-guide-problems)
 3. [Installation](#How-to-Run)
 4. [Requirements](#Requirements)
