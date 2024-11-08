@@ -273,7 +273,7 @@ plt.xlabel("Artist Count")
 plt.show()
 ```
 
-##### Chart for released_year:
+### 📊 Chart for released_year:
 Code: **`sns.histplot(df['released_year'], kde=True)`**
 - Function: Creates a histogram of the released_year column with a Kernel Density Estimate (KDE) curve overlay.
 - Purpose: To visualize the distribution of the release years of tracks in the dataset and to see trends or patterns.
