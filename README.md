@@ -1,7 +1,7 @@
 
 # 🌟Python Exploratory Data Analysis on Spotify 2023 Dataset 
-### JOSE MARTIN SJ. NINOBLA
-### 2 ECE - D
+## JOSE MARTIN SJ. NINOBLA | 2 ECE - D
+
 
 ## 🎓Course
 **ECE 2112: Advanced Computer Programming and Algorithms**
