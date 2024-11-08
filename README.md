@@ -34,7 +34,7 @@ This project aims to analyze, visualize, and interpret a dataset of music tracks
 11. [PROBLEM 7](#problem-7)
 
 
-##📑 Objectives
+## 📑 Objectives
 #### 1. Understand the Dataset Structure
 - Load and inspect the dataset, checking for missing values, data types, and the general structure.
   
